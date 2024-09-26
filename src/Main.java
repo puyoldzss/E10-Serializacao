@@ -7,28 +7,28 @@ public class Main {
         Conta conta = new ContaCorrente(123, cliente, 1000, 500);
 
         try {
-            conta.depositar(-100);
+            conta.depositar(-10000000);
             deuCerto++;
         } catch (ValorNegativoException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            conta.sacar(-50);
+            conta.sacar(-10);
             deuCerto++;
         } catch (ValorNegativoException | SemLimiteException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            conta.sacar(600);
+            conta.sacar(100);
             deuCerto++;
         } catch (ValorNegativoException | SemLimiteException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            conta.setLimite(-200);
+            conta.setLimite(-70);
             deuCerto++;
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
